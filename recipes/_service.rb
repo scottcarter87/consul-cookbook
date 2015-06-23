@@ -70,6 +70,7 @@ case node['consul']['service_mode']
 when 'bootstrap'
   service_config['server'] = true
   service_config['bootstrap'] = true
+  service_config[join_mode] = node['consul']['servers']
 when 'cluster'
   service_config['server'] = true
   if num_cluster > 1
